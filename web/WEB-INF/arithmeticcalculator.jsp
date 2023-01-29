@@ -1,6 +1,6 @@
 <%-- 
-    Document   : calculatorForm
-    Created on : Jan 28, 2023, 9:51:10 PM
+    Document   : arithmeticcalculator
+    Created on : Jan 29, 2023, 4:12:41 PM
     Author     : MiguelM
 --%>
 
@@ -10,13 +10,13 @@
     
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Age Calculator</title>
+        <title>Arithmetic Calculator</title>
     </head>
     
     <body>
         
         <%--Title--%>
-        <h1>Age Calculator</h1>
+        <h1>Arithmetic Calculator</h1>
         
         <%--Form--%>
         <form name="cForm" method="post" action="age">
@@ -28,7 +28,7 @@
         <p>${message}</p>
         
         <%--OtherCalculator--%>
-        <a href="arithmetic">Arithmetic Calculator</a>
+        <a href="age">Age Calculator</a>
         
     </body>
     
