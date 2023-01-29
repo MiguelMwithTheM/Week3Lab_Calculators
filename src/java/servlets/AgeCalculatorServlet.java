@@ -18,19 +18,26 @@ public class AgeCalculatorServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        String aNum = request.getParameter("aNum");
+        String aInput = request.getParameter("aNum");
         
-        request.setAttribute("aNum", aNum);
-        
-        if (aNum == null || aNum.equals("")){
+        request.setAttribute("aNum", aInput);
+           
+        if (aInput == null || aInput.equals("")){
             request.setAttribute("message", "You must enter a number.");
             
             getServletContext().getRequestDispatcher("/WEB-INF/agecalculator.jsp").forward(request, response);
             
-            return;
+            //return;
+        } else {
+           int aNum = Integer.parseInt(aInput);
+           
+           aNum += 1;
+           
+           request.setAttribute("message", "Your age next birthday will be " + aNum);
+           getServletContext().getRequestDispatcher("/WEB-INF/agecalculator.jsp").forward(request, response); 
         }
         
-        getServletContext().getRequestDispatcher("/WEB-INF/showNextBD.jsp").forward(request, response);
+        //getServletContext().getRequestDispatcher("/WEB-INF/showNextBD.jsp").forward(request, response);
     }
 
     @Override
