@@ -21,6 +21,16 @@ public class AgeCalculatorServlet extends HttpServlet {
         String aNum = request.getParameter("aNum");
         
         request.setAttribute("aNum", aNum);
+        
+        if (aNum == null || aNum.equals("")){
+            request.setAttribute("message", "You must enter a number.");
+            
+            getServletContext().getRequestDispatcher("/WEB-INF/agecalculator.jsp").forward(request, response);
+            
+            return;
+        }
+        
+        getServletContext().getRequestDispatcher("/WEB-INF/showNextBD.jsp").forward(request, response);
     }
 
     @Override

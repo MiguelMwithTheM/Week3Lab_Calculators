@@ -17,10 +17,13 @@
         <h1>Age Calculator</h1>
         
         <%--Form--%>
-        <form name="cForm" method="post" action="AgeCalculator">
-            Enter your age: <input type="number" id="aNum" name="aNum">
-            <input type="submit" value="Age next birthday"
+        <form name="cForm" method="post" action="age">
+            Enter your age: <input type="number" id="aNum" name="aNum" value="${aNum}">
+            <input type="submit" value="Age next birthday">
         </form>
+        
+        <%--Error Message--%>
+        <p>${message}</p>
         
     </body>
     
