@@ -19,13 +19,17 @@
         <h1>Arithmetic Calculator</h1>
         
         <%--Form--%>
-        <form name="cForm" method="post" action="age">
-            Enter your age: <input type="number" id="aNum" name="aNum" value="${aNum}">
-            <input type="submit" value="Age next birthday">
+        <form name="cForm" method="post" action="arithmetic">
+            First: <input type="number" id="fNum" name="fNum" value="${fNum}"> <br>
+            Second: <input type="number" id="sNum" name="sNum" value="${sNum}"> <br>
+            <input type="submit" value="+">
+            <input type="submit" value="-">
+            <input type="submit" value="*">
+            <input type="submit" value="%">
         </form>
         
-        <%--Error Message--%>
-        <p>${message}</p>
+        <%--Results--%>
+        <p>Result: ${message}</p>
         
         <%--OtherCalculator--%>
         <a href="age">Age Calculator</a>
