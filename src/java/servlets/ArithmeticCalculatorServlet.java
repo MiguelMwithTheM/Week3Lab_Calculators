@@ -25,12 +25,13 @@ public class ArithmeticCalculatorServlet extends HttpServlet {
         
         String fInput = request.getParameter("fNum");
         String sInput = request.getParameter("sNum");
+        String oInput = request.getParameter("operations");
         
         request.setAttribute("fNum", fInput);
         request.setAttribute("sNum", sInput);
-        
+            
         request.setAttribute("message", "---");
-        
+
         if (fInput == null && sInput == null || fInput.equals("") && sInput.equals("")){ 
              request.setAttribute("message", "---");
              
@@ -40,10 +41,27 @@ public class ArithmeticCalculatorServlet extends HttpServlet {
             request.setAttribute("message", "invalid");
             
             getServletContext().getRequestDispatcher("/WEB-INF/arithmeticcalculator.jsp").forward(request, response);
+            
         } else {
-            request.setAttribute("message", "Banan");
+            int fVal = Integer.parseInt(fInput);
+            int sVal = Integer.parseInt(sInput);
+            
+            if (oInput.contentEquals("+")){
+                request.setAttribute("message", fVal + sVal);
+            } else if (oInput.contentEquals("-")){
+                request.setAttribute("message", fVal - sVal);
+            } else if (oInput.contentEquals("*")){
+                request.setAttribute("message", fVal * sVal);
+            }  else if (oInput.contentEquals("%")){
+                request.setAttribute("message", fVal / sVal);
+            } else {
+                return;
+            }
+             
+            getServletContext().getRequestDispatcher("/WEB-INF/arithmeticcalculator.jsp").forward(request, response);
+            
         }
-        
+            
     }
 
     @Override

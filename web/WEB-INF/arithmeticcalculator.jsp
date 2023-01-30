@@ -22,10 +22,10 @@
         <form name="cForm" method="post" action="arithmetic">
             First: <input type="number" id="fNum" name="fNum" value="${fNum}"> <br>
             Second: <input type="number" id="sNum" name="sNum" value="${sNum}"> <br>
-            <input type="submit" value="+">
-            <input type="submit" value="-">
-            <input type="submit" value="*">
-            <input type="submit" value="%">
+            <input type="submit" value="+" name="operations">
+            <input type="submit" value="-" name="operations">
+            <input type="submit" value="*" name="operations">
+            <input type="submit" value="%" name="operations">
         </form>
         
         <%--Results--%>
